@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { CommonModule } from '@angular/common'; // Needed for structural directives (e.g., *ngFor or @for)
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
 
 // --- 1. Define Model Config Interface (Source of Truth) ---
 interface ModelConfig {
@@ -30,7 +30,7 @@ interface ViewerState {
 @Component({
   selector: 'app-webgl-view-screen',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLinkWithHref],
   templateUrl: './webgl-view-screen.component.html',
   styleUrl: './webgl-view-screen.component.css',
 })

@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -58,6 +59,7 @@ button.buybtn.custom:hover {
 h2 {
   color: #554d4d;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
 
 /* --- 2. Container for the Model List --- */
@@ -82,13 +84,16 @@ h2 {
     flex-direction: column;
     /* Fixed aspect ratio to prevent layout shifting when the model loads */
     aspect-ratio: 1 / 1; 
+    cursor: pointer;
 }
 
 .viewer-container h3 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.2rem;
-    color: #333;
+    color: #554d4d;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
 /* --- 4. Three.js Canvas Wrapper (.threejs-canvas) --- */

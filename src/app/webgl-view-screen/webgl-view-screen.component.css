@@ -58,6 +58,7 @@ button.buybtn.custom:hover {
 h2 {
   color: #554d4d;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
 
 /* --- 2. Container for the Model List --- */
@@ -88,7 +89,9 @@ h2 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.2rem;
-    color: #333;
+    color: #554d4d;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
 /* --- 4. Three.js Canvas Wrapper (.threejs-canvas) --- */
@@ -114,4 +117,9 @@ h2 {
         /* On extra large screens, switch to 3 columns */
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
