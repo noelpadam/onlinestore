@@ -1,9 +1,10 @@
-// src/app/webgl-viewer/webgl-viewer.component.ts
-import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+// src/app/webgl-view-screen/webgl-view-screen.component.ts
+import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { CommonModule } from '@angular/common'; // Needed for structural directives (e.g., *ngFor or @for)
+import { ActivatedRoute } from '@angular/router';
 
 // --- 1. Define Model Config Interface (Source of Truth) ---
 interface ModelConfig {
@@ -27,14 +28,15 @@ interface ViewerState {
 }
 
 @Component({
-  selector: 'app-webgl-viewer',
-  templateUrl: './webgl-viewer.component.html',
+  selector: 'app-webgl-view-screen',
   standalone: true,
   imports: [CommonModule],
-  styleUrls: ['./webgl-viewer.component.css']
+  templateUrl: './webgl-view-screen.component.html',
+  styleUrl: './webgl-view-screen.component.css',
 })
-export class WebglViewerComponent implements AfterViewInit, OnDestroy {
+export class WebglViewScreenComponent implements AfterViewInit, OnDestroy {
   @ViewChildren('rendererContainer') rendererContainers!: QueryList<ElementRef>;
+  private activatedRoute = inject(ActivatedRoute);
 
   // Use const for paths
   private readonly GLB_MODEL_PATH = '/glbfiles/sunflower.glb';
@@ -62,6 +64,26 @@ export class WebglViewerComponent implements AfterViewInit, OnDestroy {
   private viewerStates: ViewerState[] = [];
   
   private animateId: number = 0; // Better initialization
+  readonly userId: any;
+
+   constructor() {
+    // Example URL: https://www.angular.dev/users/123?role=admin&status=active#contact
+    // Access route parameters from snapshot
+    this.userId = this.activatedRoute.snapshot.paramMap.get('id');
+    // Access multiple route elements
+    const snapshot = this.activatedRoute.snapshot;
+    console.log({
+      url: snapshot.url,           // https://www.angular.dev
+      // Route parameters object: {id: '123'}
+      params: snapshot.params,
+      // Query parameters object: {role: 'admin', status: 'active'}
+      queryParams: snapshot.queryParams,  // Query parameters
+    });
+
+    this.modelData = this.modelData.filter((ele) => ele.index === parseInt(this.userId));
+  }
+
+
 
   ngAfterViewInit(): void {
     // Ensure all containers are rendered and available
