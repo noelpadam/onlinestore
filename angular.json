@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "roomworkshop": {
+    "iconshop": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/roomworkshop",
+            "outputPath": "dist/iconshop",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "roomworkshop:build:production"
+              "buildTarget": "iconshop:build:production"
             },
             "development": {
-              "buildTarget": "roomworkshop:build:development"
+              "buildTarget": "iconshop:build:development"
             }
           },
           "defaultConfiguration": "development"

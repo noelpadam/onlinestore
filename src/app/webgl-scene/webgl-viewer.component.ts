@@ -31,7 +31,7 @@ interface ViewerState {
   selector: 'app-webgl-viewer',
   templateUrl: './webgl-viewer.component.html',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkWithHref],
+  imports: [CommonModule],
   styleUrls: ['./webgl-viewer.component.css']
 })
 export class WebglViewerComponent implements AfterViewInit, OnDestroy {
@@ -48,15 +48,15 @@ export class WebglViewerComponent implements AfterViewInit, OnDestroy {
 
   // Strongly typed configuration data
   public modelData: ModelConfig[] = [
-    { index: 0, displayName: 'Sunflower ', offer: '30% 500', scale: [15, 15, 15], pos: [2, 4, 5], path: this.GLB_MODEL_PATH },
-    { index: 1, displayName: 'addidas shirt', offer: '20% 200', scale: [1.5, 1.5, 1.5], pos: [2, 4, 5], path: this.GLB_MODEL_PATH1 },
-    { index: 2, displayName: 'bed model', offer: '20% 100', scale: [3, 3, 3], pos: [2, -15, 5], path: this.GLB_MODEL_PATH2 },
-    { index: 3, displayName: 'Rado Watch ', offer: '20% 100', scale: [8, 9, 8], pos: [2, -10, 20], path: this.GLB_MODEL_PATH3 },
-    { index: 4, displayName: 'Tumbler Stylish', offer: '20% 100', scale: [10, 10, 10], pos: [0, -20, 0], path: this.GLB_MODEL_PATH4 },
-    { index: 5, displayName: 'Television SHARP', offer: '20% 100', scale: [10, 10, 10], pos: [2, 4, 5], path: this.GLB_MODEL_PATH5 },
-    { index: 6, displayName: 'Tasbih Quran', offer: '20% 100', scale: [3, 3, 3], pos: [2, -10, 5], path: this.GLB_MODEL_PATH6 },
-    { index: 7, displayName: 'Sunflower2 ', offer: '20% 100', scale: [15, 15, 15], pos: [2, 4, 5], path: this.GLB_MODEL_PATH },
-    { index: 8, displayName: 'Sunflower2 ', offer: '20% 100', scale: [15, 15, 15], pos: [2, 4, 5], path: this.GLB_MODEL_PATH },
+    { index: 0, displayName: 'Icon 1', offer: '30% 500', scale: [15, 15, 15], pos: [2, 4, 5], path: this.GLB_MODEL_PATH },
+    { index: 1, displayName: 'Icon 2', offer: '20% 200', scale: [1.5, 1.5, 1.5], pos: [2, 4, 5], path: this.GLB_MODEL_PATH1 },
+    { index: 2, displayName: 'Icon 3', offer: '20% 100', scale: [3, 3, 3], pos: [2, -15, 5], path: this.GLB_MODEL_PATH2 },
+    { index: 3, displayName: 'Icon 4', offer: '20% 100', scale: [8, 9, 8], pos: [2, -10, 20], path: this.GLB_MODEL_PATH3 },
+    { index: 4, displayName: 'Icon 5', offer: '20% 100', scale: [10, 10, 10], pos: [0, -20, 0], path: this.GLB_MODEL_PATH4 },
+    { index: 5, displayName: 'Icon 6', offer: '20% 100', scale: [10, 10, 10], pos: [2, 4, 5], path: this.GLB_MODEL_PATH5 },
+    { index: 6, displayName: 'Icon 7', offer: '20% 100', scale: [3, 3, 3], pos: [2, -10, 5], path: this.GLB_MODEL_PATH6 },
+    { index: 7, displayName: 'Icon 8', offer: '20% 100', scale: [15, 15, 15], pos: [2, 4, 5], path: this.GLB_MODEL_PATH },
+    { index: 8, displayName: 'Icon 9', offer: '20% 100', scale: [15, 15, 15], pos: [2, 4, 5], path: this.GLB_MODEL_PATH },
   ];
 
   // Initialize as empty array, replacing all separate arrays

@@ -1,5 +1,5 @@
 {
-  "name": "roomworkshop",
+  "name": "iconshop",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:roomworkshop": "node dist/roomworkshop/server/server.mjs"
+    "serve:ssr:iconshop": "node dist/iconshop/server/server.mjs"
   },
   "private": true,
   "dependencies": {
